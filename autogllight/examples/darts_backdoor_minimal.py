@@ -244,11 +244,10 @@ if __name__ == '__main__':
 
     save_dir = os.path.join('saved_models', args.dataset, f'seed_{args.seed}')
     os.makedirs(save_dir, exist_ok=True)
-    # 保存模型对象与其参数
+
     fixed_model_obj_path = os.path.join(save_dir, 'fixed_model_obj.pt')
     torch.save(fixed_model, fixed_model_obj_path)
 
-    # 保存触发器对象与其参数
     if fixed_trigger is not None:
         fixed_trigger_obj_path = os.path.join(save_dir, 'fixed_trigger_obj.pt')
         torch.save(fixed_trigger, fixed_trigger_obj_path)
